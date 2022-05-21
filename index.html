@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html style="--appear-duration:200ms; --pop-duration:200ms; --slide-duration:100ms; --ram-duration:150ms; --drill-duration:300ms; --t-duration:300ms; --vanish-duration:200ms;">
+   <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-WSC811RJNM&amp;l=dataLayer&amp;cx=c"></script><script async="" type="text/javascript" src="https://api.adinplay.com/libs/aiptag/assets/adsbygoogle.js"></script><script async="" type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-17333297-1"></script>
+      <script>
+         //// Google Analytics
+         
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-17333297-1');
+      </script>
+      <script>
+         //// Adinplay
+         
+         
+         // window.aiptag = window.aiptag || {cmd: []};
+         // aiptag.disableInterstitialAd = true;
+         // aiptag.cmd.display = aiptag.cmd.display || [];
+         
+         //// This is copy/pasted straight from adinplay.com/api to try
+         //// to do everything possible to fix the missing ad requests.
+         var aiptag = aiptag || {};
+         // This line is inserted per instructions further down the page.
+         aiptag.disableInterstitialAd = true;
+         aiptag.cmd = aiptag.cmd || [];
+         aiptag.cmd.display = aiptag.cmd.display || [];
+         // Excluding this line because I don't want interstitial ads
+         //aiptag.cmd.player = aiptag.cmd.player || [];
+         
+         //CMP tool settings
+         aiptag.cmp = {
+           show: true,
+           position: "centered",  //centered, bottom
+           button: false,
+           buttonText: "Ad Privacy Settings",
+           buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+         }
+      </script>
+
+      <meta name="csrf-param" content="authenticity_token">
+      <meta name="csrf-token" content="tqFUtSoJhHTPVnSWXUADn2Uz6YZCj8EOnJtXz8aftH4d6UKPFlAv8Y3TECweG5Ct50MTsnCDPEZr1Aj19UfCzg==">
+      <link rel="stylesheet" media="all" href="tiles.css">
+      <link rel="stylesheet" media="all" href="2048.css">
+      <script src="2048.js"></script>
+      <script src="background.js"></script>
+      <meta charset="utf-8">
+      <title>
+         Tiles
+      </title>
+      <meta content="yes" name="apple-mobile-web-app-capable">
+      <meta content="black" name="apple-mobile-web-app-status-bar-style">
+      <meta content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" name="viewport">
+      <script async="" type="text/javascript" charset="UTF-8" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+   </head>
+   <body style="min-height: 1432.92px; touch-action: manipulation; background: #195905; color: #fdd700;">
+       <div class="container">
+      <div class="adjustable two-thousand-forty-eight">
+         <div class="upper-two-thousand-forty-eight">
+            <div class="navigation wide-only">
+               <script>
+                  $('select[data-nav="theme"]').on('change', (event) => {
+                    const url = $(event.target).val();
+                    if (url != window.location) {
+                      window.location = url;
+                    }
+                  });
+               </script>
+            </div>
+            <script>
+               // Handle the user clicking on a theme (because I didn't want to make the radios links, but I don't remember why).
+               // Note: This is really generic, it could lifted out and used for anything that I want to act like a link without side-effects of putting something in an anchor tag, but I don't like this and am not sure that I'm doing it anywhere else.
+               $('input[data-nav="theme"]').on('click', (event) => {
+                 const url = $(event.target).data('url');
+                 if (url != window.location) {
+                   window.location = url;
+                 }
+               });
+            </script>
+            <div class="main-content">
+               <div class="game-ad-row mb-2">
+                  <div class="game-container-container" style="flex-grow: 1">
+                     <div class="above-game">
+                        <div class="game-title-and-scoreboard">
+                           <h1 class="game-title">
+                              <div class="theme-text"></div>
+                              <div class="original-title">
+                                 <div>Tiles</div>
+                              </div>
+                           </h1>
+                           <div class="scores-container" style="max-width: min-content; flex-wrap: wrap; justify-content: flex-end;">
+                              <div class="score-container">0</div>
+                              <div class="best-container" id="bestScore_standard">0</div>
+                           </div>
+                        </div>
+                        <div class="new-game-row" style="display: flex; align-items: flex-end;">
+                           <p class="game-intro" style="line-height: 1.3; flex-grow: 1; flex-basis: 180px; flex-shrink: 1;">
+                              Join&nbsp;the&nbsp;numbers&nbsp;and
+                              get&nbsp;to&nbsp;the&nbsp;<strong>designated</strong>&nbsp;tile!
+                              <span class="variation-text">
+                              </span>
+                           </p>
+                           <div class="undo-redo-buttons">
+                              <a class="redo-button game-button d-none" tabindex="2">Redo</a>
+                              <div>
+                                 <a class="undo-button game-button" tabindex="1">Undo</a>
+                              </div>
+                           </div>
+                           <div class="new-game-settings" style="color: white;">
+                              <a class="restart-button game-button" tabindex="2">New Game</a>
+                           </div>
+                        </div>
+                        <div class="customize-row mt-1" style="background: #195905; color: #fdd700;">
+                          <a class="dropdown-collapse" data-toggle="collapse" href="#customizeControls" role="button" style="color: #fdd700;">Customize</a>
+                           <div aria-label="Customize" class="collapse show mt-1" id="customizeControls" style="background: #558b2f;">
+                              <div class="row">
+                                 <div class="col">
+                                    <div class="form-field">
+                                       <label class="setting-name" for="gameplaySettingsWidth" style="color: #fdd700;">Width</label>
+                                       <input class="setting-value" id="gameplaySettingsWidth" name="gameplaySettingsWidth" style="width: 48px;" type="number" value="4">
+                                    </div>
+                                    <div class="form-field">
+                                       <label class="setting-name" for="gameplaySettingsHeight" style="color: #fdd700;">Height</label>
+                                       <input class="setting-value" id="gameplaySettingsHeight" name="gameplaySettingsHeight" style="width: 48px;" type="number" value="4">
+                                    </div>
+                                 </div>
+                                 <div class="col col-auto text-right">
+                                    <button class="button btn btn-sm btn-secondary reset-to-defaults" style="background: #fdd700; color: #195905;">Reset to Defaults</button>
+                                 </div>
+                              </div>
+                              <table class="gameplay-settings" id="gameplaySettingsProbabilitiesParent">
+                                 <thead>
+                                    <tr>
+                                       <th>Tile #</th>
+                                       <th>Odds</th>
+                                       <th>Auto</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr class="form-tile-row-template form-field" style="display: none;">
+                                       <td>
+                                          <input class="setting-value" name="value" style="width: 72px;" type="text" value="">
+                                       </td>
+                                       <td>
+                                          <input class="setting-value" max="1" min="0" name="probability" step="0.001" style="width: 66px;" type="number" value="">
+                                       </td>
+                                       <td>
+                                          <input class="probability-auto" type="checkbox" value="">
+                                       </td>
+                                       <td>
+                                          <span class="tile-row-delete" style="display: none; cursor: pointer">
+                                          ×
+                                          </span>
+                                          <span class="tile-special-values-container">
+                                             <select class="tile-special-values">
+                                                <option value="">Special</option>
+                                                <option value="÷">÷</option>
+                                                <option value="∞">∞</option>
+                                             </select>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                    <tr class="form-field form-tile-row" style="">
+                                       <td>
+                                          <input class="setting-value" name="value" style="width: 72px;" type="text" value="">
+                                       </td>
+                                       <td>
+                                          <input class="setting-value" max="1" min="0" name="probability" step="0.001" style="width: 66px;" type="number" value="">
+                                       </td>
+                                       <td>
+                                          <input class="probability-auto" type="checkbox" value="">
+                                       </td>
+                                       <td>
+                                          <span class="tile-row-delete" style="cursor: pointer;">
+                                          ×
+                                          </span>
+                                          <span class="tile-special-values-container" style="display: none;">
+                                             <select class="tile-special-values">
+                                                <option value="">Special</option>
+                                                <option value="÷">÷</option>
+                                                <option value="∞">∞</option>
+                                             </select>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                    <tr class="form-field form-tile-row" style="">
+                                       <td>
+                                          <input class="setting-value" name="value" style="width: 72px;" type="text" value="">
+                                       </td>
+                                       <td>
+                                          <input class="setting-value" max="1" min="0" name="probability" step="0.001" style="width: 66px;" type="number" value="">
+                                       </td>
+                                       <td>
+                                          <input class="probability-auto" type="checkbox" value="">
+                                       </td>
+                                       <td>
+                                          <span class="tile-row-delete" style="cursor: pointer;">
+                                          ×
+                                          </span>
+                                          <span class="tile-special-values-container" style="display: none;">
+                                             <select class="tile-special-values">
+                                                <option value="">Special</option>
+                                                <option value="÷">÷</option>
+                                                <option value="∞">∞</option>
+                                             </select>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                    <tr class="form-field form-tile-row" style="">
+                                       <td>
+                                          <input class="setting-value" name="value" style="width: 72px;" type="text" value="">
+                                       </td>
+                                       <td>
+                                          <input class="setting-value" max="1" min="0" name="probability" step="0.001" style="width: 66px;" type="number" value="">
+                                       </td>
+                                       <td>
+                                          <input class="probability-auto" type="checkbox" value="">
+                                       </td>
+                                       <td>
+                                          <span class="tile-row-delete" style="display: none; cursor: pointer">
+                                          ×
+                                          </span>
+                                          <span class="tile-special-values-container">
+                                             <select class="tile-special-values">
+                                                <option value="">Special</option>
+                                                <option value="÷">÷</option>
+                                                <option value="∞">∞</option>
+                                             </select>
+                                          </span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <div class="form-field">
+                                 <input class="setting-value" id="gameplaySettingsTunneling" name="gameplaySettingsTunneling" type="checkbox">
+                                 <label class="setting-name" for="gameplaySettingsTunneling" style="color: #fdd700;">Tunneling</label>
+                              </div>
+                              <div class="form-field">
+                                 <input class="setting-value" id="gameplaySettingsTunnelingTilesDisappear" name="gameplaySettingsTunnelingTilesDisappear" type="checkbox">
+                                 <label class="setting-name" for="gameplaySettingsTunnelingTilesDisappear" style="color: #fdd700;">Tunneling Tiles Disappear</label>
+                              </div>
+                              <br>
+                              <div class="form-field">
+                                 <label class="setting-name" for="gameplaySettingsMergeLimit" style="color: #fdd700;">Merge Limit</label>
+                                 <input class="setting-value" id="gameplaySettingsMergeLimit" name="gameplaySettingsMergeLimit" style="width: 84px;" type="text" value="2">
+                              </div>
+                              <input data-substitute="gameplaySettingsMergeLimit" id="gameplaySettingsMergeLimitInfinity" type="checkbox" value="Infinity">
+                              <label for="gameplaySettingsMergeLimitInfinity" style="color: #fdd700;">No Limit</label>
+                              <br>
+                              <div class="form-field">
+                                 <input class="setting-value" id="gameplaySettingsDecrementTiles" name="gameplaySettingsDecrementTiles" type="checkbox">
+                                 <label class="setting-name" for="gameplaySettingsDecrementTiles" style="color: #fdd700;">Decrement Tiles</label>
+                              </div>
+                              <br>
+                              <div class="form-field">
+                                 <label class="setting-name" for="gameplaySettingsStartTileCount" style="color: #fdd700;">Start Tile Count</label>
+                                 <input class="setting-value" id="gameplaySettingsStartTileCount" name="gameplaySettingsStartTileCount" style="width: 48px;" type="number" value="2">
+                              </div>
+                              <div class="form-field">
+                                 <label class="setting-name" for="gameplaySettingsAddTileAfterMoveCount" style="color: #fdd700;">Add Tile After Move Count</label>
+                                 <input class="setting-value" id="gameplaySettingsAddTileAfterMoveCount" name="gameplaySettingsAddTileAfterMoveCount" style="width: 48px;" type="number" value="1">
+                              </div>
+                              <br>
+                              <div class="form-field">
+                                 <input class="setting-value" id="gameplaySettingsNegativesAnnihilate" name="gameplaySettingsNegativesAnnihilate" type="checkbox">
+                                 <label class="setting-name" for="gameplaySettingsNegativesAnnihilate" style="color: #fdd700;">Negatives Annihilate</label>
+                              </div>
+                              <div class="form-field">
+                                 <input class="setting-value" id="gameplaySettingsNegativesSubtract" name="gameplaySettingsNegativesSubtract" type="checkbox">
+                                 <label class="setting-name" for="gameplaySettingsNegativesSubtract" style="color: #fdd700;">Negatives Subtract</label>
+                              </div>
+                              <br>
+                              <div class="form-field">
+                                 <label class="setting-name" for="gameplaySettingsTileGoal" style="color: #fdd700;">Tile Goal</label>
+                                 <input class="setting-value" id="gameplaySettingsTileGoal" name="gameplaySettingsTileGoal" style="width: 96px;" type="text" value="2048">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="preferences-data"></div>
+                        
+                     </div>
+                     <div class="game-container" style="height: 74px; transition: all 500ms ease-in-out 0s; ">
+                        <div class="game-message" style="transform: translate(-104px, -104px) scale(0.262411) translate(-2px, -2px);">
+                           <a class="clear-game-message-button" id="closeMessageX">×</a>
+                           <p class="gameMessageBigText"></p>
+                           <p class="gameMessageWonAndOver d-none">You have achieved the rare accomplishment of getting the winning tile and running out of moves at the same time. Is this good? Is it bad? You'll have to decide for yourself.</p>
+                           <div class="lower" style="color: white;">
+                              <a class="keep-playing-button">Keep going</a>
+                              <a class="retry-button">Try again</a>
+                              <a class="clear-game-message-button mt-1">Dismiss</a>
+                              <a class="keep-playing-anyway-button mt-1">KEEP PLAYING ANYWAY</a>
+                           </div>
+                        </div>
+                        <div class="grid-container" style="transform: scale(0.262411) translate(-2px, -2px); background-color: #aa6c39;">
+                           <div class="grid-cell" style="left: 0px; top: 0px; "></div>
+                           <div class="grid-cell" style="left: 68px; top: 0px;"></div>
+                           <div class="grid-cell" style="left: 136px; top: 0px;"></div>
+                           <div class="grid-cell" style="left: 204px; top: 0px;"></div>
+                           <div class="grid-cell" style="left: 0px; top: 68px;"></div>
+                           <div class="grid-cell" style="left: 68px; top: 68px;"></div>
+                           <div class="grid-cell" style="left: 136px; top: 68px;"></div>
+                           <div class="grid-cell" style="left: 204px; top: 68px;"></div>
+                           <div class="grid-cell" style="left: 0px; top: 136px;"></div>
+                           <div class="grid-cell" style="left: 68px; top: 136px;"></div>
+                           <div class="grid-cell" style="left: 136px; top: 136px;"></div>
+                           <div class="grid-cell" style="left: 204px; top: 136px;"></div>
+                           <div class="grid-cell" style="left: 0px; top: 204px;"></div>
+                           <div class="grid-cell" style="left: 68px; top: 204px;"></div>
+                           <div class="grid-cell" style="left: 136px; top: 204px;"></div>
+                           <div class="grid-cell" style="left: 204px; top: 204px;"></div>
+                        </div>
+                        <div class="tile-container" style="transform: scale(0.262411) translate(-2px, -2px);">
+                           <div class="tile tile-digits-1 tile-4" style="left: 78px; top: 78px;">
+                              <div class="tile-inner" style="background-position: 0px 0px; background-size: 100%; background-color: rgb(237, 224, 200); color: rgb(119, 110, 101);">
+                                 <span class="tile-value tile-string">4</span>
+                                 <div class="tile-caption tile-string"></div>
+                              </div>
+                           </div>
+                           <div class="tile tile-digits-1 tile-2" style="left: 78px; top: 10px;">
+                              <div class="tile-inner" style="background-position: 0px 0px; background-size: 100%; background-color: rgb(238, 228, 218); color: rgb(119, 110, 101);">
+                                 <span class="tile-value tile-string">2</span>
+                                 <div class="tile-caption tile-string"></div>
+                              </div>
+                           </div>
+                        </div>
+                       
+                     </div>
+                  </div>
+                
+               </div>
+            </div>
+         </div>
+         <div class="ad-placement-wide-bottom"></div>
+         <div class="px-3">
+            <p class="game-explanation">
+               <strong class="important">How to play:</strong>
+               To move the tiles, use the <strong>arrow keys</strong> or the <strong>WASD keys</strong>. When two tiles with the same number come into contact, <strong>they become one!</strong>
+               <span class="variation-text">
+               </span>
+            </p>
+         </div>
+      </div>
+       </div>
+      <script src="2048-2.js"></script>
+      <script>
+         App.Settings.gameplayPresets = new Map([
+           ['variation', {"width":4,"height":4,"probabilities":[[2,0.9],[3,0],[4,0.1]],"tileGoal":2048,"tunneling":false,"mergeLimit":2,"decrementTiles":false,"addTileAfterMoveCount":1,"startTileCount":2,"negativesAnnihilate":false,"negativesSubtract":false}],
+           ['subvariation_overrides', new Map([
+             ['difficulty', new Map(),],
+             ['list', new Map(),],
+           ])]
+         ]);
+      </script>
+      <script>
+         $(() => {
+           App.Stats.disableReporting = false;
+           App.Stats.incrementMinutesUrl = '/2048/custom_themes/original/increment_minutes_stat';
+           App.Stats.authenticityToken = 'UxtDsco3u9MKJ2v/WhhNdg5CwDJFY+pFjw6kRX5QQcz4U1WL9m4QVkiiD0UZQ95EjDI6BndvFw14Qft/TYg3fA==';
+         });
+      </script>
+      <script>
+         $(() => {
+           App.Settings.themesHaveSeparateGamesModalUrl = '/account/edit_ttfe_themes_have_separate_games';
+         
+           App.Settings.customTiles = new Map([["2",{"value":"2","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["4",{"value":"4","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["8",{"value":"8","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["16",{"value":"16","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["32",{"value":"32","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["64",{"value":"64","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["128",{"value":"128","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["256",{"value":"256","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["512",{"value":"512","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1024",{"value":"1024","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["2048",{"value":"2048","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["4096",{"value":"4096","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["8192",{"value":"8192","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["16384",{"value":"16384","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["32768",{"value":"32768","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["65536",{"value":"65536","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["131072",{"value":"131072","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["3",{"value":"3","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["6",{"value":"6","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["12",{"value":"12","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["24",{"value":"24","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["48",{"value":"48","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["96",{"value":"96","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["192",{"value":"192","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["384",{"value":"384","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["768",{"value":"768","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1536",{"value":"1536","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["3072",{"value":"3072","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["10",{"value":"10","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["20",{"value":"20","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["40",{"value":"40","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["80",{"value":"80","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["160",{"value":"160","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["320",{"value":"320","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["640",{"value":"640","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1280",{"value":"1280","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["14",{"value":"14","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["28",{"value":"28","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["56",{"value":"56","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["112",{"value":"112","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["224",{"value":"224","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["448",{"value":"448","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["896",{"value":"896","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1792",{"value":"1792","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["3584",{"value":"3584","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["9",{"value":"9","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["18",{"value":"18","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["36",{"value":"36","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["72",{"value":"72","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["144",{"value":"144","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["288",{"value":"288","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["576",{"value":"576","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1152",{"value":"1152","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["2304",{"value":"2304","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["4608",{"value":"4608","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["9216",{"value":"9216","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["27",{"value":"27","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["54",{"value":"54","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["108",{"value":"108","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["216",{"value":"216","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["432",{"value":"432","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["864",{"value":"864","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["1728",{"value":"1728","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["3456",{"value":"3456","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}],["30",{"value":"30","v":null,"image_deleted":null,"link_url":null,"label":null,"image_url":null,"image_transform":{"x":0,"y":0,"zoom":1}}]]);
+         
+           App.AdManager.useRealAds = true;
+           App.Settings.debugAds = false;
+           App.Settings.disableWordBuilding = false;
+         
+           App.Settings.variation = 'adjustable';
+           App.Settings.themesHaveSeparateGames = null;
+         
+           const options = {
+             startWithOptimallyScrolledSize: true,
+             testPattern: '',
+             theme: 'original',
+             legacySavedGameThemeName: '',
+           };
+         
+           App.gameManager = new App.TwoThousandFortyEight(options);
+           if (App.gameManager.loadRequiresThemeSeparationAnswer()) {
+             // Last time we played this kind of game a different theme was in use, which means we want to force them to decide whether to keep the themes separate.
+             $.get({
+               url: App.Settings.themesHaveSeparateGamesModalUrl,
+               success: (data) => {
+                 $(data).appendTo($('body'));
+         
+                 const modal = $('#themesHaveSeparateGamesModal').modal({
+                   show: true,
+                   keyboard: false
+                 });
+                 const authenticityToken = modal.data('authenticity-token');
+                 $('body').on('click.themesHaveSeparateGamesModal', (event) => {
+                   const element = $(event.target);
+                   if (modal.data('closed') != 1) {
+                     let startNew;
+                     let url;
+                     if (element.hasClass('decisionButton')) {
+                       startNew = $(event.target).data('start-new') == 1;
+                       url = element.data('url');
+                     } else if (element.hasClass('modal')) {
+                       url = $('#separateGames').data('url');
+                       startNew = true;
+                     }
+         
+                     if (url) {
+                       $('body').off('click.themesHaveSeparateGamesModal');
+                       modal.data('closed', 1);
+                       $.post({
+                         url: url,
+                         method: 'patch',
+                         data: {authenticity_token: authenticityToken}
+                       });
+         
+                       App.gameManager.setThemesHaveSeparateGames(startNew);
+                       App.gameManager.startLastGameOrNewGame(options);
+                     }
+                   } else {
+                     App.gameManager.startLastGameOrNewGame(options);
+                   }
+                   event.stopPropagation();
+                 });
+               },
+               error: () => {
+                 console.log(options)
+                 App.gameManager.startLastGameOrNewGame(options);
+               },
+             });
+           } else {
+             App.gameManager.startLastGameOrNewGame(options);
+           }
+         });
+      </script>
+      <div class="fixed-footer" style="position: fixed; left: 0; bottom: 0; width: 100%; text-align: center; z-index: 100;">
+         <div class="ad-placement-bottom" style="text-align: initial;"></div>
+      </div>
+      <div style="height: 300px;"></div>
+      
+   </body>
+   <iframe sandbox="allow-scripts allow-same-origin" id="54abb05566d05a" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no">
+   </iframe>
+</html>
